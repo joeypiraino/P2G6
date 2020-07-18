@@ -18,6 +18,21 @@
   },
   "homepage": "https://github.com/joeypiraino/P2G6#readme",
   "dependencies": {
-    "inquirer": "^7.3.2"
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "inquirer": "^7.3.2",
+    "mocha": "^8.0.1",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "prettier": "^2.0.5",
+    "sequelize": "^6.3.3"
   }
 }
