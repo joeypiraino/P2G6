@@ -1,0 +1,23 @@
+{
+  "name": "p2g6",
+  "version": "1.0.0",
+  "description": "JASON file for July 2020 Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeypiraino/P2G6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeypiraino/P2G6/issues"
+  },
+  "homepage": "https://github.com/joeypiraino/P2G6#readme",
+  "dependencies": {
+    "inquirer": "^7.3.2"
+  }
+}
