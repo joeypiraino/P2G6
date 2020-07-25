@@ -1,6 +1,6 @@
 var express = require("express");
 
-var PORT = process.env.PORT || 63715;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -12,10 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
+
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
+app.set('view engine', '.hbs')
+
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/maintenance_controller.js");

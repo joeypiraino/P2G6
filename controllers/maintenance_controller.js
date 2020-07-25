@@ -1,16 +1,31 @@
 const express = require("express");
 
-const burger = require("../models/burger.js");
+const carMaintenance = require("../models/index.js");
 
 const router = express.Router();
 
 const connection = require("../config/connection.js")
 
 
+// @desc Login/Landing page
+//@route GET /
+router.get('/', (req, res) => {
+    res.render('login')
+})
+
+// @desc Dashboard
+//@route GET / dashboard
+router.get('/dashboard', (req, res) => {
+    res.render('dashboard')
+})
+
+
+
+
 router.get("/", function(req, res) {
-    burger.selectAll((data) => {
+    index.selectAll((data) => {
         var hbsObject = {
-            burgers: data
+            index: data
         };
         console.log(hbsObject)
         res.render("index", hbsObject);
@@ -36,21 +51,21 @@ router.post("/", function(req, res) {
     console.log(`you sent ${newBurgerName}`)
 });
 
-router.get("/:id", function(req, res) {
-    const idNumber = req.params.id;
-    const query = "UPDATE burgers SET devoured = true  WHERE id = ?";
-    connection.query(query, [idNumber], (err, result) => {
-        if (err) throw err
-    });
-});
+// router.get("/:id", function(req, res) {
+//     const idNumber = req.params.id;
+//     const query = "UPDATE burgers SET devoured = true  WHERE id = ?";
+//     connection.query(query, [idNumber], (err, result) => {
+//         if (err) throw err
+//     });
+// });
 
-router.delete("/:id", function(req, res) {
-    const idNumber = req.params.id;
-    const query = "DELETE FROM burgers WHERE id = ?;"
-    connection.query(query, [idNumber], function(err, res) {
-        if (err) throw err;
-    })
-});
+// router.delete("/:id", function(req, res) {
+//     const idNumber = req.params.id;
+//     const query = "DELETE FROM burgers WHERE id = ?;"
+//     connection.query(query, [idNumber], function(err, res) {
+//         if (err) throw err;
+//     })
+// });
 
 
 
