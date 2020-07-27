@@ -1,10 +1,16 @@
 ///** @format */
 
 var express = require("express");
+const mysql = require("mysql2");
+const connectDB = require("./config/connection");
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
+const dotevn = require("dotenv");
+
+//Load config
+dotevn.config({ path: "./config/config.env" });
 
 // Serve static content for the app from the "public" directory in the application directory.
 //app.use(express.static("public"));
@@ -20,11 +26,21 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// app.get("/", (req, res) =>
-//   res.render("index", {
-//     title: "Car Maintence Log",
-//   })
-// );
+// //Connecting to Database
+// var mysqlConnection = mysql.createConnection({
+//   host: "",
+//   user: "root",
+//   password: "password",
+//   database: "carlog_db",
+//   multipleStatements: true,
+// });
+// mysqlConnection.connect((err) => {
+//   if (!err) {
+//     console.log("Database Connected");
+//   } else {
+//     console.log("Connection Failed");
+//   }
+// });
 
 app.get("/", function (req, res) {
   res.render("index", {
