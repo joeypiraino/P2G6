@@ -3,6 +3,7 @@
 var express = require("express");
 const mysql = require("mysql2");
 const connectDB = require("./config/connection");
+const path = require("path");
 
 var PORT = process.env.PORT || 8080;
 
@@ -20,33 +21,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
-
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// //Connecting to Database
-// var mysqlConnection = mysql.createConnection({
-//   host: "",
-//   user: "root",
-//   password: "password",
-//   database: "carlog_db",
-//   multipleStatements: true,
-// });
-// mysqlConnection.connect((err) => {
-//   if (!err) {
-//     console.log("Database Connected");
-//   } else {
-//     console.log("Connection Failed");
-//   }
-// });
+//Static Folder
+//app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", function (req, res) {
-  res.render("index", {
-    title: "Car Maintenance Logger",
-  });
-});
+// Routes
+app.use("/", require("./routes/index-routes"));
 
 // Import routes and give the server access to them.
 //var routes = require("./routes");
