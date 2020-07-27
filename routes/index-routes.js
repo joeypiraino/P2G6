@@ -18,6 +18,7 @@ router.get("/dashboard", function (req, res) {
   res.render("dashboard");
 });
 
+
 module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
