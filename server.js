@@ -37,13 +37,14 @@ app.get(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Set Handlebars
-const exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "login" }));
 app.set("view engine", "handlebars");
 
 //Static Folder
-/* app.use(express.static(path.join(__dirname, "public"))); */
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.use("/", require("./routes/index-routes"));
