@@ -1,46 +1,42 @@
 {
-  "name": "p2g6",
-  "version": "1.0.0",
-  "description": "JASON file for July 2020 Project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joeypiraino/P2G6.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joeypiraino/P2G6/issues"
-  },
-  "homepage": "https://github.com/joeypiraino/P2G6#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.4.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "express-session": "^1.17.1",
-    "express-sessions": "^1.0.6",
-    "inquirer": "^7.3.2",
-    "mocha": "^8.0.1",
-    "mysql2": "^2.1.0",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "prettier": "^2.0.5",
-    "sequelize": "^6.3.3"
-  },
-  "devDependencies": {
-    "gulp-uglify": "^3.0.2"
-  }
+	"name": "p2g6",
+	"version": "1.0.0",
+	"description": "JASON file for July 2020 Project",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joeypiraino/P2G6.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/joeypiraino/P2G6/issues"
+	},
+	"homepage": "https://github.com/joeypiraino/P2G6#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"cross-env": "^7.0.2",
+		"dotenv": "^8.2.0",
+		"eslint": "^7.4.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"express": "^4.17.1",
+		"express-handlebars": "^5.1.0",
+		"gulp-uglify": "^3.0.2",
+		"inquirer": "^7.3.2",
+		"mocha": "^8.0.1",
+		"mysql2": "^2.1.0",
+		"passport": "^0.4.1",
+		"passport-google-oauth20": "^2.0.0",
+		"passport-local": "^1.0.0",
+		"path": "^0.12.7",
+		"prettier": "^2.0.5",
+		"sequelize": "^6.3.3"
+	}
 }
