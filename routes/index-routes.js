@@ -18,28 +18,28 @@ router.get("/dashboard", function (req, res) {
   res.render("dashboard");
 });
 
-// module.exports = function (app) {
-//   app.get("/", (req, res) => {
-//     // If the user already has an account send them to the members page
-//     if (req.user) {
-//       res.redirect("/members");
-//     }
-//     res.sendFile(path.join(__dirname, "../public/signup.handlebars"));
-//   });
+module.exports = function (app) {
+  app.get("/", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.handlebars"));
+  });
 
-//   app.get("/login", (req, res) => {
-//     // If the user already has an account send them to the members page
-//     if (req.user) {
-//       res.redirect("/members");
-//     }
-//     res.sendFile(path.join(__dirname, "../public/login.handlebars"));
-//   });
+  app.get("/login", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.handlebars"));
+  });
 
-//   // Here we've add our isAuthenticated middleware to this route.
-//   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-//   app.get("/members", isAuthenticated, (req, res) => {
-//     res.sendFile(path.join(__dirname, "../public/members.handlebars"));
-//   });
-// };
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/members", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/members.handlebars"));
+  });
+};
 
 module.exports = router;
