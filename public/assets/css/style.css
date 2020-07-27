@@ -3,14 +3,12 @@ form.login {
   margin-top: 50px;
 }
 
-
 p {
-    margin: 10px 0 !important;
+  margin: 10px 0 !important;
 }
 
-.container.login-container {
-    width: 400px;
-    margin-top: 50px;
-    text-align: center;
-
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
 }

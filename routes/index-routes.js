@@ -9,15 +9,14 @@ const router = express.Router();
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 router.get("/", function (req, res) {
-  res.render("index", {
-    title: "Car Maintenance Logger",
+  res.render("login", {
+    layout: "login",
   });
 });
 
 router.get("/dashboard", function (req, res) {
   res.render("dashboard");
 });
-
 
 module.exports = function (app) {
   app.get("/", (req, res) => {
