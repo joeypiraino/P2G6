@@ -1,3 +1,5 @@
+///** @format */
+
 var express = require("express");
 
 var PORT = process.env.PORT || 8080;
@@ -5,7 +7,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -15,17 +17,27 @@ app.use(express.json());
 
 var exphbs = require("express-handlebars");
 
-app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
-app.set('view engine', '.hbs')
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
+// app.get("/", (req, res) =>
+//   res.render("index", {
+//     title: "Car Maintence Log",
+//   })
+// );
+
+app.get("/", function (req, res) {
+  res.render("index", {
+    title: "Car Maintenance Logger",
+  });
+});
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/maintenance_controller.js");
-
-app.use(routes);
+//var routes = require("./routes");
+//app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
