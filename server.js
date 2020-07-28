@@ -2,8 +2,14 @@
 
 const express = require("express");
 const mysql = require("mysql2");
+const passport   = require('passport')
+const session    = require('express-session')
+const bodyParser = require('body-parser')
+const LocalStrategy = require('passport-local').Strategy;
 /* const connectDB = require("./config/connection.js"); */
 const path = require("path");
+
+
 
 var PORT = process.env.PORT || 8080;
 
@@ -48,9 +54,13 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", require("./routes/index-routes"));
 
+//load passport strategies
+require('./app/config/passport/passport.js')(passport, models.user);
+
 // Import routes and give the server access to them.
 /* var routes = require("./routes");
 app.use(routes); */
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
