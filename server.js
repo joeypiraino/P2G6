@@ -1,17 +1,20 @@
 /** @format */
 
+require("dotenv").config();
 const express = require("express");
-const mysql = require("mysql2");
-const connectDB = require("./config/connection.js");
+/* const mysql = require("mysql2");
+const connectDB = require("./config/connection.js"); */
 const path = require("path");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const passport = require("passport");
+const db = require("./models");
 
 var PORT = process.env.PORT || 3000;
 
 const app = express();
 /* const dotevn = require("dotenv"); */
 
-app.use(googleStrategy);
+app.use(GoogleStrategy);
 app.use(passport.initialize());
 // Api call for google authentication
 app.get(
@@ -51,7 +54,9 @@ app.use("/", require("./routes/index-routes"));
 app.use(routes); */
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function () {
-	// Log (server-side) when our server has started
-	console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync().then(function () {
+	app.listen(PORT, function () {
+		// Log (server-side) when our server has started
+		console.log("Server listening on: http://localhost:" + PORT);
+	});
 });
