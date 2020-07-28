@@ -1,23 +1,20 @@
 {
 	"development": {
-		"username": "root",
-		"password": "password",
-		"database": "sequelize_passport",
-		"host": "127.0.0.1",
+		"use_env_variable": "DEV_db",
 		"dialect": "mysql2"
 	},
 	"test": {
 		"username": "root",
-		"password": "password",
-		"database": "sequelize_passportt",
+		"password": null,
+		"database": "carlog_db",
 		"host": "127.0.0.1",
 		"dialect": "mysql2"
 	},
 	"production": {
+		"use_env_variable": "JAWSDB_URL",
 		"username": "root",
-		"username": "root",
-		"password": "password",
-		"database": "sequelize_passport",
+		"password": "",
+		"database": "database_production",
 		"host": "127.0.0.1",
 		"dialect": "mysql2"
 	}
