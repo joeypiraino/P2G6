@@ -2,10 +2,11 @@
 
 const express = require("express");
 const mysql = require("mysql2");
-/* const connectDB = require("./config/connection.js"); */
+const connectDB = require("./config/connection.js");
 const path = require("path");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 const app = express();
 /* const dotevn = require("dotenv"); */
@@ -29,9 +30,6 @@ app.get(
 
 //Load config
 /* dotevn.config({ path: "./config/config.env" }); */
-
-// Serve static content for the app from the "public" directory in the application directory.
-/* app.use(express.static("public")); */
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
