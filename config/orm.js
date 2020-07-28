@@ -10,16 +10,16 @@ const orm = {
           
         });
     },
-    insertOne: (tableName, newBurgerName, cb) => {
-        const query = `INSERT INTO ${tableName} (burger_name) VALUES ${newBurgerName}`;
+    insertOne: (tableName, _cars, cb) => {
+        const query = `INSERT INTO ${tableName} (car_make, car_model, car_Year, car_VIN) VALUES ${carMake, carModel, carYear, carVIN}`;
         connection.query(query, (err, res) => {
             if (err) throw err;
             cb(res);
          
         });
     },
-    updateOne: (tableName, burgerId, cb) => {
-        const query = `UPDATE ${tableName} SET devoured = true  WHERE id = ${burgerId}`;
+    updateOne: (tableName, carsId, cb) => {
+        const query = `UPDATE ${tableName} SET devoured = true  WHERE id = ${carId}`;
         connection.query(query, (err, res) => {
             if (err) throw err;
             cb(res);
