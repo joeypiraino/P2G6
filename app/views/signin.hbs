@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <title>Signin</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+    <body>
+        <h3><i class = "fas fa-car"></i><br>Car Maintenance Logger</h3>
+        <div class = "section">
+            <p class = "lead">Track the Maintence required to keep your car running in great shape</p>
+        </div>
+
+        <div class = "divider"></div>
+
+        <div class ="section">
+            <a href="/auth/google" class = "btn red darken-1">
+                <i class = "fab fa-google left"></i>Log in with Google
+            </a>
+        </div>
+
+        <div class = "divider"></div>
+        
+        <form id="signin" name="signin" method="post" action="signin">
+            <label for="email">Email Address</label>
+            <input class="text" name="email" type="text" />
+            <label for="password">Password</label>
+            <input name="password" type="password" />
+            <input class="btn" type="submit" value="Sign In" />
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript"></script>
+    </body>
+</html>
